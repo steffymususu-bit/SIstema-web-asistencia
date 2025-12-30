@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Web de Asistencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .contenedor {
+            max-width: 500px;
+            background: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+        }
+        .resultado {
+            margin-top: 20px;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sistema Web de Asistencia</h1>
+
+<div class="contenedor">
+    <label>Nombre del estudiante</label>
+    <input type="text" id="nombre">
+
+    <label>Fecha</label>
+    <input type="date" id="fecha">
+
+    <label>Asistencia</label>
+    <select id="asistencia">
+        <option>Asistió</option>
+        <option>No asistió</option>
+    </select>
+
+    <button onclick="registrar()">Registrar asistencia</button>
+
+    <div class="resultado" id="resultado"></div>
+</div>
+
+<script>
+    function registrar() {
+        const nombre = document.getElementById("nombre").value;
+        const fecha = document.getElementById("fecha").value;
+        const asistencia = document.getElementById("asistencia").value;
+
+        document.getElementById("resultado").innerHTML =
+            "<strong>Asistencia registrada</strong><br>" +
+            "Estudiante: " + nombre + "<br>" +
+            "Fecha: " + fecha + "<br>" +
+            "Estado: " + asistencia;
+    }
+</script>
+
+</body>
+</html>
